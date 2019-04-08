@@ -52,7 +52,7 @@ export default app => {
                     Object.keys(labels).forEach(label => {
                         if (label.startsWith('com.list.link.')) {
                             let [ description, url ] = labels[label].split('|');
-                            if (!url.startsWith('/')) {
+                            if (url.startsWith('/')) {
                                 url = `http://localhost:${publicBind.PublicPort}${url}`;
                             }
                             links.push({
