@@ -108,7 +108,7 @@ volumes:
                     <% for (var l = 0; l < service.links.length; l++) { %>
                     <% var link = service.links[l]; %>
                     <div class="url-list__item">
-                        <a href="http://localhost:<%= service.port %><%= link.url %>" target="_blank" rel="noreferrer nofollower"><%= link.description %></a>
+                        <a href="<%= link.url %>" target="_blank" rel="noreferrer nofollower"><%= link.description %></a>
                     </div>
                     <% } %>
                 </div>
