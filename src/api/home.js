@@ -50,8 +50,12 @@ export default app => {
 
                     const links = [];
                     Object.keys(labels).forEach(label => {
-                        if (label.startsWith('com.list.link.')) {
+                        if (_.isne(label) && label.startsWith('com.list.link.')) {
                             let [ description, url ] = labels[label].split('|');
+                            if (!_.isne(url) || !_.isne(url)) {
+                                return;
+                            }
+
                             if (url.startsWith('/')) {
                                 url = `http://localhost:${publicBind.PublicPort}${url}`;
                             }
